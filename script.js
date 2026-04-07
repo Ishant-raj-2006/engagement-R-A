@@ -80,9 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function createParticle() {
-        const particles = ["💞", "🎉"];
         const particle = document.createElement("div");
-        particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+        particle.innerHTML = "💞";
         particle.className = "falling-particle";
         
         particle.style.left = Math.random() * 100 + "vw";
