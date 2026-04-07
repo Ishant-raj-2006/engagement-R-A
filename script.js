@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".animate-on-scroll");
     const audio = document.getElementById("bgMusic");
-    const heartsContainer = document.querySelector(".floating-hearts");
+    const heartsContainer = document.getElementById("particles-container");
     const countdownEl = document.getElementById("countdown");
     const welcomeOverlay = document.getElementById("welcome-overlay");
     const welcomeButton = document.getElementById("welcome-btn");
@@ -67,6 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const firstMusic = sections[0].getAttribute("data-music");
             playMusic(firstMusic);
             
+            // Enable Particle Rain
+            setInterval(createParticle, 250);
+            
             // Remove click and scroll listeners after the journey starts
             welcomeButton.removeEventListener("click", startJourney);
         }
@@ -76,31 +79,23 @@ document.addEventListener("DOMContentLoaded", () => {
         welcomeButton.addEventListener("click", startJourney);
     }
 
-    // 4. Floating Hearts Effect
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.innerHTML = "❤️";
-        heart.className = "floating-heart-element";
-        heart.style.position = "absolute";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = "100vh";
-        heart.style.fontSize = Math.random() * 20 + 10 + "px";
-        heart.style.opacity = Math.random();
-        heart.style.transition = "all 5s linear";
-        heart.style.pointerEvents = "none";
-        heart.style.zIndex = "1";
+    function createParticle() {
+        const particles = ["❤️", "🎉"];
+        const particle = document.createElement("div");
+        particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+        particle.className = "falling-particle";
+        
+        particle.style.left = Math.random() * 100 + "vw";
+        particle.style.fontSize = Math.random() * 20 + 15 + "px";
+        particle.style.opacity = Math.random() * 0.5 + 0.5;
+        const duration = Math.random() * 3 + 4; // 4-7 seconds
+        particle.style.animationDuration = duration + "s";
         
         if (heartsContainer) {
-            heartsContainer.appendChild(heart);
-            setTimeout(() => {
-                heart.style.top = "-10vh";
-                heart.style.transform = `translateX(${Math.random() * 100 - 50}px)`;
-            }, 100);
-            setTimeout(() => heart.remove(), 6000);
+            heartsContainer.appendChild(particle);
+            setTimeout(() => particle.remove(), duration * 1000);
         }
     }
-
-    setInterval(createHeart, 300);
 
     // 5. Countdown Timer (Set your wedding date here)
     const weddingDate = new Date("2026-12-25T00:00:00").getTime();
