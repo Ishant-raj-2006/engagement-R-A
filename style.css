@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('photo3.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('photos/photo3.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -144,7 +144,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('photo5.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('photos/photo5.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -398,7 +398,7 @@ body {
 /* Ending Section */
 .ending {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('photo3.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('photos/photo3.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
