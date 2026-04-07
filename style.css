@@ -293,9 +293,10 @@ body {
 .image-wrapper img {
     width: 100%;
     height: auto;
-    max-height: 70vh;
+    max-height: 80vh; /* Increased slightly for better visibility */
     object-fit: contain;
-    border-radius: 30px;
+    object-position: top center; /* Prioritize the head area */
+    border-radius: 15px; /* Smaller radius to avoid cutting heads in corners */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
