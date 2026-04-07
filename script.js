@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const musicBtn = document.getElementById("musicToggle");
     const heartsContainer = document.querySelector(".floating-hearts");
     const countdownEl = document.getElementById("countdown");
+    const welcomeOverlay = document.getElementById("welcome-overlay");
+    const welcomeButton = document.getElementById("welcome-btn");
 
     let isPlaying = false;
     let currentMusicPath = "";
@@ -55,19 +57,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => sectionObserver.observe(section));
 
-    // 3. User Interaction Trigger
-    const startAudio = () => {
+    // 3. Welcome Button Click Trigger
+    const startJourney = () => {
         if (!isPlaying) {
+            // Fade out the welcome overlay
+            welcomeOverlay.classList.add("fade-out");
+            
+            // Allow scrolling
+            document.body.style.overflowY = "auto";
+            
             // Start with music1.mp3 (Hero Section)
             const firstMusic = sections[0].getAttribute("data-music");
             playMusic(firstMusic);
-            document.removeEventListener("click", startAudio);
-            document.removeEventListener("scroll", startAudio);
+            
+            // Remove click and scroll listeners after the journey starts
+            welcomeButton.removeEventListener("click", startJourney);
         }
     };
 
-    document.addEventListener("click", startAudio);
-    window.addEventListener("scroll", startAudio, { once: true });
+    if (welcomeButton) {
+        welcomeButton.addEventListener("click", startJourney);
+    }
 
     // Music Button Toggle
     musicBtn.addEventListener("click", (e) => {
