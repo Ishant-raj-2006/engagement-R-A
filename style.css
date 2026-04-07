@@ -352,25 +352,25 @@ body {
     justify-content: space-between;
     padding: 0 40px;
     transform: translateY(-50%);
-    pointer-events: none; /* Allows clicking through to cards if overlapping slightly */
+    pointer-events: none;
     z-index: 100;
 }
 
 .nav-btn {
-    pointer-events: auto; /* Re-enable for the buttons themselves */
+    pointer-events: auto;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .nav-btn:hover {
@@ -380,11 +380,11 @@ body {
 }
 
 .nav-btn span {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .next-btn {
-    margin-left: auto; /* Push to right if no prev button */
+    margin-left: auto;
 }
 
 /* Specific adjustments for section types */
@@ -399,23 +399,14 @@ body {
     border-color: white;
 }
 
-/* Hide labels on side buttons for cleaner look */
-.nav-btn {
-    font-size: 0; /* Hides text, keeps icon */
-}
-
-.nav-btn span {
-    font-size: 1.5rem;
-}
-
 /* Mobile adjustments */
 @media (max-width: 850px) {
     .section-nav {
         padding: 0 10px;
     }
     .nav-btn {
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
     }
 }
 
