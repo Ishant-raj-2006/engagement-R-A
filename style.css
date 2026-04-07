@@ -439,6 +439,14 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
+.developer-credit {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .story-card {
