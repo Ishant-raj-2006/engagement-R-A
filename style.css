@@ -1,0 +1,301 @@
+:root {
+    --primary: #ff4d6d;
+    --secondary: #ff758c;
+    --accent: #ffb3c1;
+    --bg-light: #fff5f7;
+    --text-dark: #2d3436;
+    --glass: rgba(255, 255, 255, 0.8);
+    --shadow: 0 8px 32px 0 rgba(255, 77, 109, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Music Button */
+.music-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+.music-btn.playing {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 77, 109, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.amp {
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.hero-shayari {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+    margin-top: 10px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
+    40% { transform: translateY(-10px) rotate(45deg); }
+    60% { transform: translateY(-5px) rotate(45deg); }
+}
+
+/* Floating Hearts Background */
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Story Sections */
+.story {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+.story-card {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 40px;
+    box-shadow: var(--shadow);
+    transition: transform 0.6s ease;
+}
+
+.story:nth-child(even) .story-card {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 1.5rem;
+}
+
+.shayari-box {
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+}
+
+.shayari {
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.image-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: 15px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #b2bec3;
+}
+
+/* Ending Section */
+.ending {
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--bg-light), white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ending-names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+.infinity-symbol {
+    font-size: 3rem;
+    color: var(--accent);
+    margin: 1rem 0;
+}
+
+.forever {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #636e72;
+}
+
+.thank-you {
+    margin-top: 2rem;
+    color: #b2bec3;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .story-card {
+        flex-direction: column !important;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .names {
+        font-size: 3.5rem;
+    }
+    
+    .image-wrapper img {
+        height: 300px;
+    }
+}
