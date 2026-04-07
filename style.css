@@ -395,17 +395,6 @@ body {
     border-color: white;
 }
 
-/* Mobile adjustments */
-@media (max-width: 850px) {
-    .section-nav {
-        padding: 0 10px;
-    }
-    .nav-btn {
-        width: 35px;
-        height: 35px;
-    }
-}
-
 /* Ending Section */
 .ending {
     height: 100vh;
@@ -419,7 +408,7 @@ body {
     justify-content: center;
     text-align: center;
     gap: 20px;
-    color: white; /* Ensure text is white against the photo */
+    color: white;
 }
 
 .ending-names {
@@ -448,19 +437,101 @@ body {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive */
-@media (max-width: 850px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
     .story-card {
-        flex-direction: column !important;
-        padding: 2rem;
         gap: 2rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .welcome-title {
+        font-size: 3rem;
     }
     
+    .welcome-subtitle {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
     .names {
         font-size: 3.5rem;
     }
+
+    .hero-shayari {
+        padding: 1.2rem 1.5rem;
+        width: 90%;
+    }
+
+    .story-card {
+        flex-direction: column !important;
+        max-width: 500px;
+        text-align: center;
+    }
     
+    .story:nth-child(even) .story-card {
+        flex-direction: column !important;
+    }
+
+    .shayari-box {
+        border-left: none;
+        border-top: 3px solid var(--accent);
+        padding: 1.5rem 0 0 0;
+    }
+
     .image-wrapper img {
-        height: 300px;
+        height: 350px;
+    }
+
+    .ending-names {
+        font-size: 3rem;
+    }
+
+    .section-nav {
+        padding: 0 15px;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .names {
+        font-size: 2.8rem;
+    }
+    
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-shayari p {
+        font-size: 0.9rem;
+    }
+
+    .countdown {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .countdown-item {
+        min-width: 60px;
+        padding: 0.8rem;
+    }
+
+    .image-wrapper img {
+        height: 280px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .nav-btn {
+        width: 35px;
+        height: 35px;
     }
 }
