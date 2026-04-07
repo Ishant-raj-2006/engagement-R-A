@@ -143,4 +143,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(updateCountdown, 1000);
     updateCountdown();
-});
+
+    // 6. Next & Back Button Navigation
+    const navSections = [
+        document.querySelector(".hero"),
+        ...document.querySelectorAll(".story"),
+        document.querySelector(".ending")
+    ];
+
+    document.querySelectorAll(".next-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const currentSection = btn.closest("section");
+            const currentIndex = navSections.indexOf(currentSection);
+            if (currentIndex < navSections.length - 1) {
+                navSections[currentIndex + 1].scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+
+    document.querySelectorAll(".prev-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const currentSection = btn.closest("section");
+            const currentIndex = navSections.indexOf(currentSection);
+            if (currentIndex > 0) {
+                navSections[currentIndex - 1].scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});

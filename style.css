@@ -336,6 +336,62 @@ body {
     color: #b2bec3;
 }
 
+/* Navigation Buttons */
+.section-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+}
+
+.nav-btn span {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.next-btn:hover span {
+    transform: translateX(4px);
+}
+
+.prev-btn:hover span {
+    transform: translateX(-4px);
+}
+
+/* Light version for Hero section */
+.hero .nav-btn {
+    border-color: white;
+    color: white;
+}
+
+.hero .nav-btn:hover {
+    background: white;
+    color: var(--primary);
+}
+
 /* Ending Section */
 .ending {
     height: 100vh;
