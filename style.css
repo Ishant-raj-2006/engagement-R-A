@@ -409,37 +409,43 @@ body {
 /* Ending Section */
 .ending {
     height: 100vh;
-    background: linear-gradient(to bottom, var(--bg-light), white);
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('photo3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 20px;
+    color: white; /* Ensure text is white against the photo */
 }
 
 .ending-names {
     font-family: 'Dancing Script', cursive;
     font-size: 4rem;
-    color: var(--primary);
+    color: white;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .infinity-symbol {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--accent);
     margin: 1rem 0;
+    text-shadow: 0 4px 15px rgba(255, 77, 109, 0.5);
 }
 
 .forever {
     font-size: 1.5rem;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    color: #636e72;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .thank-you {
     margin-top: 2rem;
-    color: #b2bec3;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Responsive */
