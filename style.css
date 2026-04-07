@@ -110,35 +110,6 @@ body {
     60% { transform: scale(1); }
 }
 
-/* Music Button */
-.music-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background: white;
-    box-shadow: var(--shadow);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--primary);
-    transition: transform 0.3s ease;
-}
-
-.music-btn:hover {
-    transform: scale(1.1);
-}
-
-.music-btn.playing {
-    animation: pulse 2s infinite;
-}
-
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.4); }
     70% { box-shadow: 0 0 0 15px rgba(255, 77, 109, 0); }

@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".animate-on-scroll");
     const audio = document.getElementById("bgMusic");
-    const musicBtn = document.getElementById("musicToggle");
     const heartsContainer = document.querySelector(".floating-hearts");
     const countdownEl = document.getElementById("countdown");
     const welcomeOverlay = document.getElementById("welcome-overlay");
@@ -26,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 audio.load();
                 audio.play().then(() => {
                     isPlaying = true;
-                    musicBtn.classList.add("playing");
-                    musicBtn.innerHTML = '<span class="icon">⏸</span>';
                     // Fade In
                     audio.volume = 0;
                     let fadeIn = setInterval(() => {
@@ -78,21 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (welcomeButton) {
         welcomeButton.addEventListener("click", startJourney);
     }
-
-    // Music Button Toggle
-    musicBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); 
-        if (isPlaying) {
-            audio.pause();
-            musicBtn.classList.remove("playing");
-            musicBtn.innerHTML = '<span class="icon">♪</span>';
-        } else {
-            audio.play();
-            musicBtn.classList.add("playing");
-            musicBtn.innerHTML = '<span class="icon">⏸</span>';
-        }
-        isPlaying = !isPlaying;
-    });
 
     // 4. Floating Hearts Effect
     function createHeart() {
