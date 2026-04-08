@@ -237,7 +237,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
+    padding: 0 20px;
     gap: 20px;
     position: relative;
     overflow: hidden;
@@ -250,28 +250,28 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    opacity: 0.95;
+    opacity: 1;
     z-index: -1;
 }
 
 .story:nth-of-type(1)::before {
-    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo1.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photos/photo1.jpg');
 }
 
 .story:nth-of-type(2)::before {
-    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo2.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photos/photo2.jpg');
 }
 
 .story:nth-of-type(3)::before {
-    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo3.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photos/photo3.jpg');
 }
 
 .story:nth-of-type(4)::before {
-    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo4.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photos/photo4.jpg');
 }
 
 .story:nth-of-type(5)::before {
-    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo5.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('photos/photo5.jpg');
 }
 
 .story-card {
@@ -280,10 +280,12 @@ body {
     display: flex;
     align-items: center;
     gap: 4rem;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255,255,255,0.22);
+    backdrop-filter: blur(18px);
     padding: 3rem;
     border-radius: 40px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
     transition: transform 0.6s ease;
 }
 
@@ -297,26 +299,26 @@ body {
 
 .section-title {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: var(--primary);
+    font-size: 3rem;
+    color: white;
     margin-bottom: 1rem;
 }
 
 .description {
     font-size: 1.1rem;
-    color: #636e72;
+    color: rgba(255,255,255,0.85);
     margin-bottom: 1.5rem;
 }
 
 .shayari-box {
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid rgba(255,255,255,0.8);
     padding-left: 1.5rem;
     margin: 2rem 0;
 }
 
 .shayari {
     font-style: italic;
-    color: var(--primary);
+    color: rgba(255,255,255,0.9);
     font-size: 1.2rem;
 }
 
