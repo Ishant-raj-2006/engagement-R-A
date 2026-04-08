@@ -239,6 +239,39 @@ body {
     justify-content: center;
     padding: 80px 20px;
     gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.story::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    z-index: -1;
+}
+
+.story:nth-of-type(1)::before {
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo1.jpg');
+}
+
+.story:nth-of-type(2)::before {
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo2.jpg');
+}
+
+.story:nth-of-type(3)::before {
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo3.jpg');
+}
+
+.story:nth-of-type(4)::before {
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo4.jpg');
+}
+
+.story:nth-of-type(5)::before {
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('photos/photo5.jpg');
 }
 
 .story-card {
@@ -247,7 +280,7 @@ body {
     display: flex;
     align-items: center;
     gap: 4rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
     padding: 3rem;
     border-radius: 40px;
     box-shadow: var(--shadow);
@@ -481,11 +514,21 @@ body {
     .story-card {
         flex-direction: column !important;
         max-width: 100%;
+        width: 100%;
         text-align: center;
     }
     
     .story:nth-child(even) .story-card {
         flex-direction: column !important;
+    }
+
+    .story-card .text-content,
+    .story-card .image-wrapper {
+        width: 100%;
+    }
+
+    .story-card .image-wrapper {
+        max-width: 100%;
     }
 
     .shayari-box {
@@ -543,6 +586,10 @@ body {
     .countdown-item {
         min-width: 60px;
         padding: 0.8rem;
+    }
+
+    .image-wrapper {
+        display: none;
     }
 
     .image-wrapper img {
