@@ -146,8 +146,8 @@ body {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('photos/photo5.jpg');
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: center center;
+    background-attachment: scroll;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,6 +288,7 @@ body {
 .image-wrapper {
     flex: 1;
     position: relative;
+    width: 100%;
 }
 
 .image-wrapper img {
@@ -546,4 +547,4 @@ body {
         width: 35px;
         height: 35px;
     }
-}
+}
